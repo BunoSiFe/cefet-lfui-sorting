@@ -46,7 +46,7 @@ void QuickSortRecursivo(unsigned long *v, long p, long r, unsigned long *mov, un
       if (j - p < r - j) {
          QuickSortRecursivo (v, p, j-1, mov, comp);
          p = j + 1;
-      } else
+      } else {
          QuickSortRecursivo (v, j+1, r, mov, comp);
          r = j - 1;
       }

@@ -9,7 +9,6 @@ void GerarVetorAleatorio(unsigned long *v, unsigned long n)
 {
 	unsigned long i;
     for(i = 0; i < n; i++) {
-
         v[i] = (rand() % n);
     }
 }
@@ -22,7 +21,7 @@ Estatisticas Ordenar(unsigned long *v, unsigned long n)
 	tempo1 = clock();
 	//ordena o vetor
 	// pode ser: Selecao, Insercao, QuickSort ou HeapSort
-    void (*algoritmoEscolhido)(unsigned long *, unsigned long, unsigned long *, unsigned long *) = Selecao;
+    void (*algoritmoEscolhido)(unsigned long *v, unsigned long n, unsigned long *mov, unsigned long *comp)=HeapSort;
     algoritmoEscolhido(v, n, &estatisticas.movimentacoes, &estatisticas.comparacoes);
 	tempo2 = clock();
 	estatisticas.tempo =  (double)(tempo2 - tempo1) / CLOCKS_PER_SEC;
